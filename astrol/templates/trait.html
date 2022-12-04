@@ -1,0 +1,38 @@
+
+{%extends 'base.html' %}
+{%block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+{%endblock head%}
+
+{%block body%}
+<h1 align="center">Nakshatra</h1>
+{% if stu %}
+ <h1>Show Data</h1>
+ <h3>{{stu}}</h3>
+ <table>
+     <tr>
+         <th>ID</th>
+         <th>Nakshatra</th>
+         <th>positive</th>
+         <th>negative</th>
+     </tr>
+ <tr>
+     {% for st in stu %}
+     <td>{{st.id}}</td>
+     <td>{{st.Nakshatra}}</td>
+     <td>{{st.positive}}</td>
+     <td>{{st.negative}}</td>
+ </tr>
+     {% endfor %}
+</table>
+{% else %}
+ <h1>No Data</h1>
+{% endif %}
+{%endblock body%}

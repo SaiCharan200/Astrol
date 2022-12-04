@@ -1,0 +1,35 @@
+
+{%extends 'base.html' %}
+{%block head%}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        th,td{
+        border: 2px black solid;
+        }
+    </style>
+{%endblock head%}
+
+{%block body%}
+<h1 align="center">Rashi</h1>
+{% if ras %}
+ <h3>{{ras}}</h3>
+ <table align="center">
+     <tr>
+         <th>ID</th>
+         <th>Nakshatra</th>
+         <th>rashi</th>
+     </tr>
+ <tr>
+     {% for st in ras %}
+     <td>{{st.id}}</td>
+     <td>{{st.Nakshatra}}</td>
+     <td>{{st.rashi}}</td>
+ </tr>
+     {% endfor %}
+</table>
+{% else %}
+ <h1>No Data</h1>
+{% endif %}
+{%endblock body%}

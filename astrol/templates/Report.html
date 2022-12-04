@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block body %}
+<div class="container mt-3" style="width: 95%; font-size: 14px">
+    <form method="POST" class="card p-3 mt-5" autocomplete="off">
+        {%csrf_token%}
+        {{form}}
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+
+    {%for message in messages%}
+             <div class="alert alert-primary alert-dismissal fade show" role="alert">{{message}}
+             </div>
+    {%endfor%}
+
+</div>
+{%endblock body %}
